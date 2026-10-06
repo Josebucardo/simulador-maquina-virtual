@@ -1,0 +1,24 @@
+# Python y entornos locales
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Configuración personal y secretos
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+
+# Archivos generados o temporales
+output/
+tmp/
+*.log
+Thumbs.db
+.DS_Store
+
+# Material antiguo conservado localmente
+archive/
+ASO/
