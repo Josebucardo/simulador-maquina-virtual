@@ -4,6 +4,12 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+*.egg-info/
+build/
+dist/
 
 # Configuración personal y secretos
 .vscode/
@@ -13,8 +19,18 @@ venv/
 !.env.example
 
 # Archivos generados o temporales
-output/
+output/*
+!output/pdf/
+!output/word/
+!output/manual/
+!output/exposicion/
+!output/presentacion/
+!output/reportes/
+!output/compartir/
 tmp/
+*.tmp
+~$*.docx
+~$*.pptx
 *.log
 Thumbs.db
 .DS_Store

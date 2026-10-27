@@ -1,0 +1,54 @@
+{
+  "fecha": "2026-10-27T05:59:16-06:00",
+  "zona_horaria": "America/Managua",
+  "estado": "CORRECTO",
+  "casos_funcionales": 6,
+  "errores_carga": 9,
+  "pruebas_regresion": 39,
+  "resultados_funcionales": [
+    {
+      "prueba": "Suma",
+      "estado": "CORRECTO"
+    },
+    {
+      "prueba": "Resta",
+      "estado": "CORRECTO"
+    },
+    {
+      "prueba": "Almacenamiento",
+      "estado": "CORRECTO"
+    },
+    {
+      "prueba": "Condicional JZ",
+      "estado": "CORRECTO"
+    },
+    {
+      "prueba": "Bucle con JNZ",
+      "estado": "CORRECTO"
+    },
+    {
+      "prueba": "Entrada y salida",
+      "estado": "CORRECTO"
+    }
+  ],
+  "comprobaciones": {
+    "verificador": {
+      "comando": "python -m tests.verificar_entrega",
+      "estado": "CORRECTO",
+      "codigo_salida": 0,
+      "salida": "=== RESULTADOS DE CASOS DE PRUEBA ===\nSuma: ACC=30, PC=5, IR=HALT, HALT=True, memoria={20: 30} -> OK\nResta: ACC=20, PC=5, IR=HALT, HALT=True, memoria={20: 20} -> OK\nAlmacenamiento: ACC=30, PC=5, IR=HALT, HALT=True, memoria={20: 30} -> OK\nCondicional JZ: ACC=111, PC=9, IR=HALT, HALT=True -> OK\nBucle con JNZ: ACC=6, PC=14, IR=HALT, HALT=True, memoria={53: 6} -> OK\nEntrada y salida: ACC=7, PC=4, IR=HALT, HALT=True, memoria={20: 7} -> OK\n\n=== VALIDACIÓN DE ERRORES ===\nInstrucción inexistente: OK\nPrograma sin HALT: OK\nDirección inválida: OK\nError de sintaxis: OK\nRecarga de caso y restauración de datos: OK\n\nTODAS LAS PRUEBAS PASARON.\n"
+    },
+    "regresiones": {
+      "comando": "python -m unittest discover -s tests -v",
+      "estado": "CORRECTO",
+      "codigo_salida": 0,
+      "salida": "test_archivo_con_entradas_repetidas_no_solicita_dialogos (test_consola.ConsoleTests.test_archivo_con_entradas_repetidas_no_solicita_dialogos) ... ok\ntest_argumentos_incompatibles_se_rechazan_antes_de_ejecutar (test_consola.ConsoleTests.test_argumentos_incompatibles_se_rechazan_antes_de_ejecutar) ... ok\ntest_bucle_batch_termina_y_exporta_error_en_limite_total (test_consola.ConsoleTests.test_bucle_batch_termina_y_exporta_error_en_limite_total) ... ok\ntest_carga_fallida_da_codigo_de_error_y_reporte_si_se_pidio (test_consola.ConsoleTests.test_carga_fallida_da_codigo_de_error_y_reporte_si_se_pidio) ... ok\ntest_falta_entrada_conserva_error_y_exporta_sin_bloquear (test_consola.ConsoleTests.test_falta_entrada_conserva_error_y_exporta_sin_bloquear) ... ok\ntest_menu_consulta_sin_carga_no_inutiliza_maquina (test_consola.ConsoleTests.test_menu_consulta_sin_carga_no_inutiliza_maquina) ... ok\ntest_menu_fin_de_archivo_y_ctrl_c_salen_sin_traceback (test_consola.ConsoleTests.test_menu_fin_de_archivo_y_ctrl_c_salen_sin_traceback) ... ok\ntest_menu_no_permite_editar_codigo_y_continua_utilizable (test_consola.ConsoleTests.test_menu_no_permite_editar_codigo_y_continua_utilizable) ... ok\ntest_menu_reinicia_datos_y_repite_programa (test_consola.ConsoleTests.test_menu_reinicia_datos_y_repite_programa) ... ok\ntest_archivo_con_bom_y_data_pasa_por_controlador_una_vez (test_regresiones.VMTests.test_archivo_con_bom_y_data_pasa_por_controlador_una_vez) ... ok\ntest_bucle_infinito (test_regresiones.VMTests.test_bucle_infinito) ... ok\ntest_cancelacion_y_error_no_producen_instrucciones_ficticias (test_regresiones.VMTests.test_cancelacion_y_error_no_producen_instrucciones_ficticias) ... ok\ntest_cancelar_y_reintentar (test_regresiones.VMTests.test_cancelar_y_reintentar) ... ok\ntest_carga_api_invalida_conserva_ejecucion_completa (test_regresiones.VMTests.test_carga_api_invalida_conserva_ejecucion_completa) ... ok\ntest_carga_invalida_preserva_programa (test_regresiones.VMTests.test_carga_invalida_preserva_programa) ... ok\ntest_cargador_copia_instrucciones_y_preserva_fuente (test_regresiones.VMTests.test_cargador_copia_instrucciones_y_preserva_fuente) ... ok\ntest_comentarios_y_limite_programa (test_regresiones.VMTests.test_comentarios_y_limite_programa) ... ok\ntest_consola_muestra_error_y_causa_hasta_recargar (test_regresiones.VMTests.test_consola_muestra_error_y_causa_hasta_recargar) ... ok\ntest_datos_declarados (test_regresiones.VMTests.test_datos_declarados) ... ok\ntest_diagnostico_registro_invalido_y_operando_no_entero (test_regresiones.VMTests.test_diagnostico_registro_invalido_y_operando_no_entero) ... ok\ntest_edicion_respeta_codigo_error_y_recuperacion (test_regresiones.VMTests.test_edicion_respeta_codigo_error_y_recuperacion) ... ok\ntest_entrada_tipo_invalido (test_regresiones.VMTests.test_entrada_tipo_invalido) ... ok\ntest_error_conserva_pc_y_bloquea (test_regresiones.VMTests.test_error_conserva_pc_y_bloquea) ... ok\ntest_explicaciones_reflejan_valores_y_decisiones (test_regresiones.VMTests.test_explicaciones_reflejan_valores_y_decisiones) ... ok\ntest_flags_iniciales_y_fases (test_regresiones.VMTests.test_flags_iniciales_y_fases) ... ok\ntest_halt_en_limite (test_regresiones.VMTests.test_halt_en_limite) ... ok\ntest_historial_registra_entrada_salida_y_cambio_de_memoria (test_regresiones.VMTests.test_historial_registra_entrada_salida_y_cambio_de_memoria) ... ok\ntest_limite_total_incluye_pasos_manuales (test_regresiones.VMTests.test_limite_total_incluye_pasos_manuales) ... ok\ntest_limites_y_fetch_invalido (test_regresiones.VMTests.test_limites_y_fetch_invalido) ... ok\ntest_memoria_rechaza_tipos_invalidos_sin_escribir (test_regresiones.VMTests.test_memoria_rechaza_tipos_invalidos_sin_escribir) ... ok\ntest_paso_sin_carga_no_bloquea_y_permite_cargar (test_regresiones.VMTests.test_paso_sin_carga_no_bloquea_y_permite_cargar) ... ok\ntest_reinicio_restaura_datos_editados_antes_del_primer_paso (test_regresiones.VMTests.test_reinicio_restaura_datos_editados_antes_del_primer_paso) ... ok\ntest_saltos (test_regresiones.VMTests.test_saltos) ... ok\ntest_csv_uniforme_formula_segura_y_numeros (test_reportes.ReportTests.test_csv_uniforme_formula_segura_y_numeros) ... ok\ntest_error_y_maquina_vacia (test_reportes.ReportTests.test_error_y_maquina_vacia) ... ok\ntest_guardado_roundtrip_y_extension_sin_destruir (test_reportes.ReportTests.test_guardado_roundtrip_y_extension_sin_destruir) ... ok\ntest_html_escapa_nombre_codigo_y_error (test_reportes.ReportTests.test_html_escapa_nombre_codigo_y_error) ... ok\ntest_salto_destino_secuencial_se_cuenta_por_condicion (test_reportes.ReportTests.test_salto_destino_secuencial_se_cuenta_por_condicion) ... ok\ntest_snapshot_independiente_y_estados (test_reportes.ReportTests.test_snapshot_independiente_y_estados) ... ok\n\n----------------------------------------------------------------------\nRan 39 tests in 0.221s\n\nOK\n"
+    },
+    "gui": {
+      "comando": "python -m tests.verificar_gui",
+      "estado": "CORRECTO",
+      "codigo_salida": 0,
+      "salida": "GUI OK: carga por controlador, DATA, pasos y pausa, reentrada protegida, editor pendiente, filtros, edición, límites, reinicio, errores y reportes JSON/HTML/CSV; ventana 1024x700 y 1366x768.\n"
+    }
+  }
+}

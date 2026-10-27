@@ -1,0 +1,16 @@
+=== RESULTADOS DE CASOS DE PRUEBA ===
+Suma: ACC=30, PC=5, IR=HALT, HALT=True, memoria={20: 30} -> OK
+Resta: ACC=20, PC=5, IR=HALT, HALT=True, memoria={20: 20} -> OK
+Almacenamiento: ACC=30, PC=5, IR=HALT, HALT=True, memoria={20: 30} -> OK
+Condicional JZ: ACC=111, PC=9, IR=HALT, HALT=True -> OK
+Bucle con JNZ: ACC=6, PC=14, IR=HALT, HALT=True, memoria={53: 6} -> OK
+Entrada y salida: ACC=7, PC=4, IR=HALT, HALT=True, memoria={20: 7} -> OK
+
+=== VALIDACIÓN DE ERRORES ===
+Instrucción inexistente: OK
+Programa sin HALT: OK
+Dirección inválida: OK
+Error de sintaxis: OK
+Recarga de caso y restauración de datos: OK
+
+TODAS LAS PRUEBAS PASARON.

@@ -1,0 +1,7 @@
+{
+  "name": "vm-studio-presentacion",
+  "private": true,
+  "type": "module",
+  "description": "Dependencias opcionales para regenerar las diapositivas",
+  "dependencies": { "pptxgenjs": "4.0.1" }
+}

@@ -1,0 +1,331 @@
+{
+  "programa": "Almacenamiento",
+  "archivo": "examples/test3_almacenamiento.asm",
+  "codigo": "DATA 10 30\n\n# Prueba 3 - Almacenamiento\n# Datos iniciales: Mem[10] = 30\n# Esperado: Mem[20] = 30\nLOAD 10\nSTORE 20\nLOAD 20\nOUTPUT\nHALT\n",
+  "entradas": [],
+  "datos_iniciales": {
+    "10": 30
+  },
+  "esperado": {
+    "acc": 30,
+    "memoria": {
+      "20": 30
+    },
+    "impresora": [
+      30
+    ]
+  },
+  "resultado": "CORRECTO",
+  "estado": {
+    "pc": 5,
+    "ir": "HALT",
+    "acc": 30,
+    "flag_z": false,
+    "flag_n": false,
+    "halted": true,
+    "error": null,
+    "cycles": 5,
+    "program_loaded": true
+  },
+  "memoria": [
+    "LOAD 10",
+    "STORE 20",
+    "LOAD 20",
+    "OUTPUT",
+    "HALT",
+    0,
+    0,
+    0,
+    0,
+    0,
+    30,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    30,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "impresora": [
+    30
+  ],
+  "traza": [
+    "Programa cargado exitosamente desde 'test3_almacenamiento.asm'. Total instrucciones: 5.",
+    "Paso PC=00: LOAD Mem[10] -> ACC=30",
+    "\nEXPLICACIÓN · Paso 1: LOAD 10\nBuscamos el número guardado en la casilla 10 de la memoria: 30. Lo copiamos al acumulador (ACC), que es donde trabajamos con los números. Antes tenía 0; ahora tiene 30. La memoria conserva su valor.\nLa próxima instrucción está en la casilla 1 (eso indica el contador de programa, PC).",
+    "  FETCH: Mem[00] -> IR = LOAD 10",
+    "  DECODE: Operación LOAD; operando 10",
+    "  EXECUTE: ACC 0 -> 30 | PC 00 -> 01 | Z=0 N=0",
+    "Paso PC=01: STORE ACC=30 -> Mem[20]",
+    "\nEXPLICACIÓN · Paso 2: STORE 20\nGuardamos el número 30 del acumulador en la casilla 20 de la memoria, reemplazando lo que había allí. El acumulador conserva su número.\nLa próxima instrucción está en la casilla 2 (eso indica el contador de programa, PC).",
+    "  FETCH: Mem[01] -> IR = STORE 20",
+    "  DECODE: Operación STORE; operando 20",
+    "  EXECUTE: ACC 30 -> 30 | PC 01 -> 02 | Z=0 N=0",
+    "Paso PC=02: LOAD Mem[20] -> ACC=30",
+    "\nEXPLICACIÓN · Paso 3: LOAD 20\nBuscamos el número guardado en la casilla 20 de la memoria: 30. Lo copiamos al acumulador (ACC), que es donde trabajamos con los números. Antes tenía 30; ahora tiene 30. La memoria conserva su valor.\nLa próxima instrucción está en la casilla 3 (eso indica el contador de programa, PC).",
+    "  FETCH: Mem[02] -> IR = LOAD 20",
+    "  DECODE: Operación LOAD; operando 20",
+    "  EXECUTE: ACC 30 -> 30 | PC 02 -> 03 | Z=0 N=0",
+    "Paso PC=03: OUTPUT impreso -> 30",
+    "\nEXPLICACIÓN · Paso 4: OUTPUT\nEnviamos el número 30 del acumulador a la impresora virtual para mostrar el resultado. El número permanece en el acumulador.\nLa próxima instrucción está en la casilla 4 (eso indica el contador de programa, PC).",
+    "  FETCH: Mem[03] -> IR = OUTPUT",
+    "  DECODE: Operación OUTPUT; operando ninguno",
+    "  EXECUTE: ACC 30 -> 30 | PC 03 -> 04 | Z=0 N=0",
+    "Paso PC=04: HALT -> Finalización de ejecución.",
+    "\nEXPLICACIÓN · Paso 5: HALT\nLlegamos al final del programa. La máquina se detiene y deja de ejecutar instrucciones. El acumulador terminó con 30. Puedes revisar la memoria y los resultados o reiniciar para repetir.",
+    "  FETCH: Mem[04] -> IR = HALT",
+    "  DECODE: Operación HALT; operando ninguno",
+    "  EXECUTE: ACC 30 -> 30 | PC 04 -> 05 | Z=0 N=0"
+  ],
+  "fases_ultima_instruccion": {
+    "FETCH": "Mem[04] -> IR = HALT",
+    "DECODE": "Operación HALT; operando ninguno",
+    "EXECUTE": "ACC 30 -> 30 | PC 04 -> 05 | Z=0 N=0"
+  },
+  "pasos": [
+    {
+      "paso": 1,
+      "antes": {
+        "pc": 0,
+        "ir": "NINGUNO",
+        "acc": 0,
+        "flag_z": true,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 0,
+        "program_loaded": true
+      },
+      "despues": {
+        "pc": 1,
+        "ir": "LOAD 10",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 1,
+        "program_loaded": true
+      },
+      "fases": {
+        "FETCH": "Mem[00] -> IR = LOAD 10",
+        "DECODE": "Operación LOAD; operando 10",
+        "EXECUTE": "ACC 0 -> 30 | PC 00 -> 01 | Z=0 N=0"
+      },
+      "cambios_memoria": []
+    },
+    {
+      "paso": 2,
+      "antes": {
+        "pc": 1,
+        "ir": "LOAD 10",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 1,
+        "program_loaded": true
+      },
+      "despues": {
+        "pc": 2,
+        "ir": "STORE 20",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 2,
+        "program_loaded": true
+      },
+      "fases": {
+        "FETCH": "Mem[01] -> IR = STORE 20",
+        "DECODE": "Operación STORE; operando 20",
+        "EXECUTE": "ACC 30 -> 30 | PC 01 -> 02 | Z=0 N=0"
+      },
+      "cambios_memoria": [
+        {
+          "direccion": 20,
+          "antes": 0,
+          "despues": 30
+        }
+      ]
+    },
+    {
+      "paso": 3,
+      "antes": {
+        "pc": 2,
+        "ir": "STORE 20",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 2,
+        "program_loaded": true
+      },
+      "despues": {
+        "pc": 3,
+        "ir": "LOAD 20",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 3,
+        "program_loaded": true
+      },
+      "fases": {
+        "FETCH": "Mem[02] -> IR = LOAD 20",
+        "DECODE": "Operación LOAD; operando 20",
+        "EXECUTE": "ACC 30 -> 30 | PC 02 -> 03 | Z=0 N=0"
+      },
+      "cambios_memoria": []
+    },
+    {
+      "paso": 4,
+      "antes": {
+        "pc": 3,
+        "ir": "LOAD 20",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 3,
+        "program_loaded": true
+      },
+      "despues": {
+        "pc": 4,
+        "ir": "OUTPUT",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 4,
+        "program_loaded": true
+      },
+      "fases": {
+        "FETCH": "Mem[03] -> IR = OUTPUT",
+        "DECODE": "Operación OUTPUT; operando ninguno",
+        "EXECUTE": "ACC 30 -> 30 | PC 03 -> 04 | Z=0 N=0"
+      },
+      "cambios_memoria": []
+    },
+    {
+      "paso": 5,
+      "antes": {
+        "pc": 4,
+        "ir": "OUTPUT",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": false,
+        "error": null,
+        "cycles": 4,
+        "program_loaded": true
+      },
+      "despues": {
+        "pc": 5,
+        "ir": "HALT",
+        "acc": 30,
+        "flag_z": false,
+        "flag_n": false,
+        "halted": true,
+        "error": null,
+        "cycles": 5,
+        "program_loaded": true
+      },
+      "fases": {
+        "FETCH": "Mem[04] -> IR = HALT",
+        "DECODE": "Operación HALT; operando ninguno",
+        "EXECUTE": "ACC 30 -> 30 | PC 04 -> 05 | Z=0 N=0"
+      },
+      "cambios_memoria": []
+    }
+  ]
+}

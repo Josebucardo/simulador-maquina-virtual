@@ -1,0 +1,1 @@
+GUI OK: carga por controlador, DATA, pasos y pausa, reentrada protegida, editor pendiente, filtros, edición, límites, reinicio, errores y reportes JSON/HTML/CSV; ventana 1024x700 y 1366x768.

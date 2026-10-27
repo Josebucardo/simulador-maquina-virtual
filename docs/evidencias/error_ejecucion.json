@@ -1,0 +1,21 @@
+{
+  "codigo": "LOAD 0\nHALT",
+  "estado": {
+    "pc": 0,
+    "ir": "LOAD 0",
+    "acc": 0,
+    "flag_z": true,
+    "flag_n": false,
+    "halted": false,
+    "error": "La celda [0] contiene 'LOAD 0', no un dato numérico entero.",
+    "cycles": 0,
+    "program_loaded": true
+  },
+  "salida_consola": "\n====================================================\nESTADO DE LA MÁQUINA VIRTUAL (GRUPO 13)\n====================================================\n  PC  (Contador Programa)   : 00\n  IR  (Registro Instrucción): LOAD 0\n  ACC (Acumulador)          : 0\n  FLAGS                     : [Z=1, N=0]\n  ESTADO                    : ERROR\n  CICLOS                    : 0\n  CAUSA                     : La celda [0] contiene 'LOAD 0', no un dato numérico entero.\n====================================================\n",
+  "fases": {
+    "FETCH": "Mem[00] -> IR = LOAD 0",
+    "DECODE": "Operación LOAD; operando 0",
+    "EXECUTE": "ERROR: La celda [0] contiene 'LOAD 0', no un dato numérico entero."
+  },
+  "resultado": "CORRECTO"
+}

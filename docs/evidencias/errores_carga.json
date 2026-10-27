@@ -1,0 +1,65 @@
+[
+  {
+    "prueba": "Instrucción inexistente",
+    "codigo": "MULT 10\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Instrucción inexistente 'MULT'."
+  },
+  {
+    "prueba": "Programa sin HALT",
+    "codigo": "LOAD 10\nOUTPUT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "El programa no contiene instrucción HALT. La carga fue rechazada: se requiere una terminacion explicita."
+  },
+  {
+    "prueba": "Dirección superior inválida",
+    "codigo": "LOAD 100\nHALT",
+    "excepcion_esperada": "MemoryOutOfBoundsException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Dirección [100] fuera del rango 0 a 99."
+  },
+  {
+    "prueba": "Dirección negativa",
+    "codigo": "STORE -1\nHALT",
+    "excepcion_esperada": "MemoryOutOfBoundsException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Dirección [-1] fuera del rango 0 a 99."
+  },
+  {
+    "prueba": "Error de sintaxis",
+    "codigo": "LOAD 10 20\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Error de sintaxis. Se esperaba como máximo un operando."
+  },
+  {
+    "prueba": "Registro no válido",
+    "codigo": "LOAD R9\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Registro no válido como operando 'R9'. ACC se usa implícitamente; 'LOAD' requiere una dirección de memoria entera."
+  },
+  {
+    "prueba": "Registro usado como dirección",
+    "codigo": "LOAD ACC\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 1: Registro no válido como operando 'ACC'. ACC se usa implícitamente; 'LOAD' requiere una dirección de memoria entera."
+  },
+  {
+    "prueba": "DATA sobre código",
+    "codigo": "DATA 0 5\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Una declaración DATA se superpone con el código."
+  },
+  {
+    "prueba": "DATA duplicado",
+    "codigo": "DATA 90 1\nDATA 90 2\nHALT",
+    "excepcion_esperada": "InvalidInstructionException",
+    "estado": "CORRECTO",
+    "mensaje": "Línea 2: DATA duplicado en 90."
+  }
+]
